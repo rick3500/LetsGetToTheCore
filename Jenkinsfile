@@ -1,7 +1,7 @@
 pipeline {
     agent {
         dockerfile {
-            dir 'm4'
+            dir '.'
             filename 'Dockerfile.sdk'
         }
     }

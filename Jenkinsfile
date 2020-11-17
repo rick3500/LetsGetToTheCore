@@ -1,7 +1,6 @@
 pipeline {
     agent {
         dockerfile {
-            dir '.'
             filename 'Dockerfile.sdk'
         }
     }
@@ -12,13 +11,12 @@ pipeline {
                     dotnet --list-sdks
                     dotnet --list-runtimes
                 '''
-                sh 'printenv'
-                sh 'ls -l "$WORKSPACE"'
+              
             }
         }
         stage('Build') {
             steps {
-                sh 'dotnet build "$WORKSPACE/'
+               
             }
         }
     }
